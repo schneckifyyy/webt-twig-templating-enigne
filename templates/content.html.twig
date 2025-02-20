@@ -1,0 +1,3 @@
+{% for video in videos %}
+    <h2> {{video.name}}</h2><br><h3>{{video.Source}}</h3><br>{{video.EmbedHTML |raw}}<br>
+{% endfor %}

@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Website{% endblock %}</title>
-</head>
+{% include 'head.html.twig'%}
 <body>
 
 {% include 'header.html.twig' %}
 
 <main>
-    {% block content %}{% endblock %}
+    {% include 'content.html.twig' %}
 </main>
-
+{% include 'footer.html.twig' %}
 </body>
 </html>

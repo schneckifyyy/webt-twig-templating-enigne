@@ -13,6 +13,8 @@
         }
     ],
     "require": {
-        "twig/twig": "^3.20"
+        "twig/twig": "^3.20",
+        "twbs/bootstrap": "*",
+        "twitter/bootstrap": "*"
     }
 }
