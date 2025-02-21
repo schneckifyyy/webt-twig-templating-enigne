@@ -1,12 +1,5 @@
 <?php
 require_once 'vendor/autoload.php';
-
-// Set up Twig
-$loader = new \Twig\Loader\FilesystemLoader('templates');
-$twig = new \Twig\Environment($loader, [
-    'cache' => false, // Disable cache for development
-]);
-
 interface Video
 {
     public function getName(): string;
@@ -91,15 +84,18 @@ $videos[] = new VimeoVideo("Arc'teryx Presents: Jamie", "Vimeo",
 $videos[] = new YoutubeVideo("PARABEL - Die Wasserstrahlparabel", "Youtube", "<iframe class=\"embed-responsive-item\" width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/dJ9U_lMvrRU?si=I_nMtfnRflGK9lIa\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>");
 
 $videos[] = new VimeoVideo("The Vandal", "Vimeo", "<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/681971716?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"The Vandal\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>");
+// Setup Twig
 
+$loader = new \Twig\Loader\FilesystemLoader('templates');
+$twig = new \Twig\Environment($loader, ['cache' => false]);
 
-//for ($i = 0; $i < 5; $i++) {
-//    $vid = new YoutubeVideo("PARABEL - Die Wasserstrahlparabel", "Youtube", "<iframe class=\"embed-responsive-item\" width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/dJ9U_lMvrRU?si=I_nMtfnRflGK9lIa\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>");
-//    array_push($videos, $vid);
-//    $vimVid = new VimeoVideo("The Vandal", "Vimeo", "<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/681971716?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"The Vandal\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>");
-//    array_push($videos, $vimVid);
-//}
+// Routing Logic
+$page = $_GET['page'] ?? 'home';
+echo match ($page) {
+    'contact' => $twig->render('contact.html.twig'),
+    'about' => $twig->render('about.html.twig'),
+    'home' => $twig->render('base.html.twig', ['videos' => $videos]),
+    default => $twig->render('base.html.twig', ['videos' => $videos]),
+};
 
-// Render the content template (which extends base.html.twig)
-echo $twig->render('base.html.twig', ['videos' => $videos]);
 
