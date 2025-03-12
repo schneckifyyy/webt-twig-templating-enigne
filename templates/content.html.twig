@@ -1,3 +1,7 @@
 {% for video in videos %}
-    <h2> {{video.name}}</h2><br><h3>{{video.Source}}</h3><br>{{video.EmbedHTML |raw}}<br>
+    {% if video.name == 'Vimeo' %}
+    <h2> Video von Vimeo</h2><br><h3>{{video.Source}}</h3><br>{{video.EmbedHTML |raw}}<br>
+    {% else  %}
+        <h2>Video von Youtube </h2><br><h3>{{video.Source}}</h3><br>{{video.EmbedHTML |raw}}<br>
+    {% endif %}
 {% endfor %}
