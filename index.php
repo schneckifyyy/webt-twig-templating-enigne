@@ -5,21 +5,25 @@ use AdamOgris\WebtTwigTemplatingEngine\YoutubeVideo;
 $videos = [];
 
 $videos[] = new YoutubeVideo("Rick Astley - Never Gonna Give You Up (Official Music Video)", "YouTube",
-    "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/dQw4w9WgXcQ?si=alBml4NskPxy8Ll-\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>");
+    "https://www.youtube.com/embed/dQw4w9WgXcQ?si=alBml4NskPxy8Ll");
 
 $videos[] = new VimeoVideo("Sandstorm", "Vimeo",
-    "<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1007717548?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Sandstorm\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>");
+    "https://player.vimeo.com/video/1007717548?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479");
 
 $videos[] = new YoutubeVideo("Bibi H - How it is ( wap bap ... ) [Official Video]", "YouTube",
-    "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/4gSOMba1UdM?si=P5KWLCijfSuC7iJr\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>");
+    "https://www.youtube.com/embed/4gSOMba1UdM?si=P5KWLCijfSuC7iJr");
 
-$videos[] = new YoutubeVideo(" Michael Wendler - Egal (offizielles Video aus dem Album \"Flucht nach vorn\") ", "YouTube",
-    "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/osxsfgWgqQY?si=kaNb2M8cyuxSZ9go\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>");
+$videos[] = new YoutubeVideo("Michael Wendler - Egal (offizielles Video aus dem Album \"Flucht nach vorn\")", "YouTube",
+    "https://www.youtube.com/embed/osxsfgWgqQY?si=kaNb2M8cyuxSZ9go");
+
 $videos[] = new VimeoVideo("Arc'teryx Presents: Jamie", "Vimeo",
-    "<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1008904782?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Arc'teryx Presents: Jamie\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>");
-$videos[] = new YoutubeVideo("PARABEL - Die Wasserstrahlparabel", "Youtube", "<iframe class=\"embed-responsive-item\" width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/dJ9U_lMvrRU?si=I_nMtfnRflGK9lIa\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>");
+    "https://player.vimeo.com/video/1008904782?badge=0&autopause=0&player_id=0&app_id=58479");
 
-$videos[] = new VimeoVideo("The Vandal", "Vimeo", "<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/681971716?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"The Vandal\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>");
+$videos[] = new YoutubeVideo("PARABEL - Die Wasserstrahlparabel", "YouTube",
+    "https://www.youtube.com/embed/dJ9U_lMvrRU?si=I_nMtfnRflGK9lIa");
+
+$videos[] = new VimeoVideo("The Vandal", "Vimeo",
+    "https://player.vimeo.com/video/681971716?badge=0&autopause=0&player_id=0&app_id=58479");
 
 $loader = new \Twig\Loader\FilesystemLoader('templates');
 $twig = new \Twig\Environment($loader, ['cache' => false]);
