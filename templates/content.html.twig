@@ -1,17 +1,7 @@
 {% for video in videos %}
     {% if video.source == 'Vimeo' %}
-        <h2> Video von Vimeo</h2><br>
-        <iframe src="{{ video.EmbedHTML }}" frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-                width="560" height="315" title="Sandstorm">
-        </iframe>
-        <script src=\"https://player.vimeo.com/api/player.js\"></script>"
+        {% include 'VimeoVideo.html.twig' %}
     {% else %}
-        <h2>Video von Youtube </h2><br>
-        <iframe width="560" height="315" src="{{ video.EmbedHTML }}"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-        </iframe><br>
+        {% include 'YoutubeVideo.html.twig' %}
     {% endif %}
 {% endfor %}
